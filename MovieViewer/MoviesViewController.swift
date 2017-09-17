@@ -85,6 +85,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
     cell.backgroundColor = UIColor.clear
+    cell.selectionStyle = .none
     var movie = [String: Any]()
     if isSearching {
       movie = filteredMovies[indexPath.row]
@@ -148,7 +149,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     // Pass the selected object to the new view controller.
     let cell = sender as! UITableViewCell
     let indexPath = tableView.indexPath(for: cell)
-    let movie = movies[indexPath!.row]
+    let movie = isSearching ? filteredMovies[indexPath!.row] : movies[indexPath!.row]
 
     let detailsViewController = segue.destination as! DetailsViewController
     detailsViewController.movie = movie as NSDictionary
