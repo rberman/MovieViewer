@@ -16,11 +16,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var alertView: UIView!
   @IBOutlet weak var warningIcon: UIImageView!
+  
   var movies: [[String: Any]] = [[String: Any]]()
   var filteredMovies: [[String: Any]] = [[String: Any]]()
   var endpoint: String = ""
-  var isSearching = false
-  let backgroundColor = UIColor.init(red: 0.82, green: 0.77, blue: 0.95, alpha: 1.0)
+
+  private var isSearching = false
+  private let backgroundColor = UIColor.init(red: 0.82, green: 0.77, blue: 0.95, alpha: 1.0)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -100,7 +102,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
       posterUrl = URL(string: baseUrl + path)
     }
 
-    cell.titleLabel.text = title
+    cell.movieTitleLabel.text = title
     cell.synopsisLabel.text = synopsis
     let posterRequest = URLRequest(url: posterUrl as URL)
     cell.posterView.setImageWith(

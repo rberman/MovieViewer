@@ -50,9 +50,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="movieTitleLabel" destination="h9g-s7-qYd" id="gBS-EO-rZe"/>
                                             <outlet property="posterView" destination="bow-pw-H4u" id="CSu-MB-cxP"/>
                                             <outlet property="synopsisLabel" destination="qxq-2X-C2E" id="HLu-kL-Olc"/>
-                                            <outlet property="titleLabel" destination="h9g-s7-qYd" id="IyY-Wh-bRY"/>
                                             <segue destination="zZ4-Ue-O7j" kind="push" id="9sg-ll-9fD"/>
                                         </connections>
                                     </tableViewCell>
